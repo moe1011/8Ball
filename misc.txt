@@ -1,0 +1,25 @@
+ <div className="App select-none h-screen w-screen overflow-x-hidden overflow-y-hidden">
+      <div className="relative text-white text-xl md:text-5xl mt-40 ">
+        <div className="Left-Intro  left-0 absolute">HOLD THE 8 BALL</div>
+        <div className="Right-Intro right-0 absolute">ASK YOUR QUESTION</div>
+      </div>
+
+      <div className="flex justify-center align-middle">
+        <div
+          className={
+            (predict == false ? "animate-fade-out" : "animate-fade-in") +
+            " absolute text-center top-40 md:top-28 text-2xl md:text-3xl text-blue-600"
+          }
+        >
+          <Prediction predict={predict} />
+        </div>
+
+        <RiveComponent
+          className="h-[30rem] w-[30rem] md:h-[40rem] md:w-[40rem] cursor-pointer"
+          onMouseDown={handleMouseDown}
+          onMouseUp={handleMouseUp}
+          onTouchStart={handleMouseDown}
+          onTouchEnd={handleMouseUp}
+        />
+      </div>
+    </div>

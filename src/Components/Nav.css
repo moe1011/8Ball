@@ -1,0 +1,49 @@
+.Nav{
+    transform: translatey(-50rem);
+    animation-name: Nav-In;
+    animation-duration: 1s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  @keyframes Nav-In {
+    to{transform: translatey(0rem);}
+  }
+
+  .Portfolio{
+    animation-name: Portfolio-Shake;
+    animation-duration: 8s;
+    animation-delay: 10s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  @keyframes Portfolio-Shake {
+    0%{transform: rotate(0deg)}
+    5%{transform: rotate(-10deg)}
+    12.5%{transform: rotate(10deg);}
+    20%{transform: rotate(0deg);}
+    100%{transform: rotate(0deg);}
+  }
+
+  @media (min-width: 640px){
+    .Nav{
+        transform: translateX(50rem);
+        animation-name: Nav-In;
+        animation-duration: 1s;
+        animation-delay: 5.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      @keyframes Nav-In {
+        to{transform: translateX(0rem);}
+      }
+      
+  }
+  
+  
+  
+  
