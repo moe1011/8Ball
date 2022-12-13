@@ -15,6 +15,8 @@ import Nav from "./Components/Nav";
 */
 function App() {
   //States
+  const [isFirstRender, setIsFirstRender] = useState(true);
+  const [firstRenderAnim, setFirstRenderAnim] = useState(false);
   const [isBallTouch, setIsBallTouch] = useState(false); // Used to detect if the ball is being touched
   const [mouseDown, setMouseDown] = useState(0); // Used to check if the mouse or touch is a single click or a hold
   const [predict, setPredict] = useState(false); // Should the 8 Ball create a prediction
@@ -60,6 +62,11 @@ function App() {
         // console.log("Hold");
         onHoldInput.fire();
         setIsHold(true);
+        if(isFirstRender == true){
+          setFirstRenderAnim(true)
+          setIsFirstRender(false);
+        }
+
         // Otherwise a short press (Tap/Click) is made
       } else {
         setIsHold(false);
@@ -108,7 +115,7 @@ function App() {
       onMouseUp={handleMouseUp}
       onTouchEnd={handleMouseUp}
     >
-      <div className="relative text-[21px] md:text-4xl lg:text-[55px] font-bold top-40 sm:top-36 ">
+      <div className="relative text-[21px] md:text-4xl lg:text-[55px] font-bold top-36">
         <div
           className="Left-Intro bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 text-transparent h-24
         left-1 md:left-16 lg:left-20 absolute sm:w-max "
@@ -123,10 +130,14 @@ function App() {
         </div>
       </div>
       <header className="App-header h-screen w-screen">
+      <div className={((firstRenderAnim == true) ? "animate-fade-in-out " : " ") +
+      " opacity-0 absolute text-center top-28 sm:top-16 text-2xl md:text-4xl lg:text-[55px] bg-clip-text bg-gradient-to-br from-sky-400 to-blue-500 text-transparent h-24 w-screen"}>
+        LET GO WHEN YOU FEEL READY
+      </div>
         <div
           className={
             (predict == false ? "animate-fade-out" : "animate-fade-in") +
-            " absolute text-center top-44 sm:top-36 md:top-[6.5rem] text-3xl md:text-4xl bg-clip-text bg-gradient-to-b from-sky-500 to-blue-700 text-transparent h-24 w-screen"
+            " absolute text-center top-32 sm:top-36 md:top-[6.5rem] text-3xl md:text-4xl bg-clip-text bg-gradient-to-b from-sky-500 to-blue-700 text-transparent h-24 w-screen"
           }
         >
           <Prediction predict={predict} />
