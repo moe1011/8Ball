@@ -21,7 +21,7 @@ body{
 .Left-Intro {
   opacity: 0;
   animation-name: Fade-In, Fade-Out;
-  animation-delay: 0.75s, 4.5s;
+  animation-delay: 0.75s, 6.5s;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;
@@ -31,7 +31,16 @@ body{
 .Right-Intro {
   opacity: 0;
   animation-name: Fade-In, Fade-Out;
-  animation-delay: 2.25s, 4.5s;
+  animation-delay: 2.25s, 6.5s;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.FadeInOut{
+  opacity: 0;
+  animation-name: Fade-In, Fade-Out;
+  animation-delay: 3.75s, 6.5s;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-timing-function: ease-in-out;

@@ -2,7 +2,7 @@
     transform: translatey(-50rem);
     animation-name: Nav-In;
     animation-duration: 1s;
-    animation-delay: 5s;
+    animation-delay: 6s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   }
@@ -31,11 +31,6 @@
   @media (min-width: 640px){
     .Nav{
         transform: translateX(50rem);
-        animation-name: Nav-In;
-        animation-duration: 1s;
-        animation-delay: 5.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
       }
 
       @keyframes Nav-In {

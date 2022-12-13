@@ -15,8 +15,6 @@ import Nav from "./Components/Nav";
 */
 function App() {
   //States
-  const [isFirstRender, setIsFirstRender] = useState(true);
-  const [firstRenderAnim, setFirstRenderAnim] = useState(false);
   const [isBallTouch, setIsBallTouch] = useState(false); // Used to detect if the ball is being touched
   const [mouseDown, setMouseDown] = useState(0); // Used to check if the mouse or touch is a single click or a hold
   const [predict, setPredict] = useState(false); // Should the 8 Ball create a prediction
@@ -62,10 +60,6 @@ function App() {
         // console.log("Hold");
         onHoldInput.fire();
         setIsHold(true);
-        if(isFirstRender == true){
-          setFirstRenderAnim(true)
-          setIsFirstRender(false);
-        }
 
         // Otherwise a short press (Tap/Click) is made
       } else {
@@ -118,20 +112,20 @@ function App() {
       <div className="relative text-[21px] md:text-4xl lg:text-[55px] font-bold top-36">
         <div
           className="Left-Intro bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 text-transparent h-24
-        left-1 md:left-16 lg:left-20 absolute sm:w-max "
+        left-1 md:left-16 lg:left-[4.5rem] absolute sm:w-max "
         >
           HOLD THE 8 BALL
         </div>
         <div
           className="Right-Intro bg-clip-text bg-gradient-to-r from-blue-500 to-sky-400 text-transparent h-24
-        right-1 md:right-16 lg:right-20 absolute sm:w-max"
+        right-1 md:right-16 lg:right-[4.5rem] absolute sm:w-max"
         >
           ASK YOUR QUESTION
         </div>
       </div>
       <header className="App-header h-screen w-screen">
-      <div className={((firstRenderAnim == true) ? "animate-fade-in-out " : " ") +
-      " opacity-0 absolute text-center top-28 sm:top-16 text-2xl md:text-4xl lg:text-[55px] bg-clip-text bg-gradient-to-br from-sky-400 to-blue-500 text-transparent h-24 w-screen"}>
+      <div className={
+      " FadeInOut opacity-0 absolute text-center top-28 sm:top-16 text-2xl md:text-4xl lg:text-[55px] bg-clip-text bg-gradient-to-br from-sky-400 to-blue-500 text-transparent h-24 w-screen"}>
         LET GO WHEN YOU FEEL READY
       </div>
         <div
