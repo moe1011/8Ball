@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/8Ball/static/css/main.f93df240.css",
+    "main.js": "/8Ball/static/js/main.63e90669.js",
+    "static/js/787.f73c53c4.chunk.js": "/8Ball/static/js/787.f73c53c4.chunk.js",
+    "index.html": "/8Ball/index.html",
+    "main.f93df240.css.map": "/8Ball/static/css/main.f93df240.css.map",
+    "main.63e90669.js.map": "/8Ball/static/js/main.63e90669.js.map",
+    "787.f73c53c4.chunk.js.map": "/8Ball/static/js/787.f73c53c4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f93df240.css",
+    "static/js/main.63e90669.js"
+  ]
+}
