@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 
-
 import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
 import Prediction from "./Components/Prediction";
 import Nav from "./Components/Nav";
@@ -31,12 +30,12 @@ function App() {
     onStateChange: (event) => {
       // Used to check the current state machine animation being ran
       // console.log(event.data[0]);
-      if (event.data[0] == "Charge" || event.data[0] == "Charge-Full") {
+      if (event.data[0] === "Charge" || event.data[0] === "Charge-Full") {
         console.log("data matched");
         setIsHoldAnimationPlaying(true);
       }
 
-      if (event.data[0] == "Charge-Release") {
+      if (event.data[0] === "Charge-Release") {
         setTimeout(() => {
           setPredict(true);
         }, 2000);
@@ -73,7 +72,7 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (predict == true) {
+      if (predict === true) {
         setPredict(false);
       }
     }, 3000);
@@ -105,44 +104,46 @@ function App() {
   //Return (Main display)
   return (
     <div
-      className="App select-none h-screen w-screen"
+      className="App select-none min-h-screen w-screen overflow-x-hidden "
       onMouseUp={handleMouseUp}
       onTouchEnd={handleMouseUp}
     >
-      <div className="relative text-[21px] md:text-4xl lg:text-[55px] font-bold top-36">
+      <div className="relative text-[21px] md:text-4xl lg:text-[55px] font-bold top-28 md:top-24">
         <div
           className="Left-Intro bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500 text-transparent h-24
-        left-1 md:left-16 lg:left-[4.5rem] absolute sm:w-max "
+        left-1 md:left-16 lg:left-8 absolute sm:w-max "
         >
           HOLD THE 8 BALL
         </div>
         <div
           className="Right-Intro bg-clip-text bg-gradient-to-r from-blue-500 to-sky-400 text-transparent h-24
-        right-1 md:right-16 lg:right-[4.5rem] absolute sm:w-max"
+        right-1 md:right-16 lg:right-8 absolute sm:w-max"
         >
           ASK YOUR QUESTION
         </div>
       </div>
       <header className="App-header h-screen w-screen">
-      <div className={
-      " FadeInOut opacity-0 absolute text-center top-28 sm:top-16 text-2xl md:text-4xl lg:text-[55px] bg-clip-text bg-gradient-to-br from-sky-400 to-blue-500 text-transparent h-24 w-screen"}>
-        LET GO WHEN YOU FEEL READY
-      </div>
+        <div
+          className="FadeInOut opacity-0 absolute text-center top-20 sm:top-16 md:top-10 text-2xl md:text-4xl lg:text-[55px] font-bold 
+      bg-clip-text bg-gradient-to-b from-sky-400 to-blue-700 text-transparent h-24 w-screen"
+        >
+          LET GO WHEN YOU FEEL READY
+        </div>
         <div
           className={
-            (predict == false ? "animate-fade-out" : "animate-fade-in") +
-            " absolute text-center top-32 sm:top-36 md:top-[6.5rem] text-3xl md:text-4xl bg-clip-text bg-gradient-to-b from-sky-500 to-blue-700 text-transparent h-24 w-screen"
+            (predict === false ? "animate-fade-out" : "animate-fade-in") +
+            " absolute text-center top-28 sm:top-[10%] text-3xl md:text-4xl bg-clip-text bg-gradient-to-b from-sky-500 to-blue-700 text-transparent h-24 w-screen"
           }
         >
           <Prediction predict={predict} />
         </div>
 
         <RiveComponent
-          className="h-[30rem] w-[30rem] md:h-[40rem] md:w-[40rem] cursor-pointer z-10"
+          className="h-[30rem] w-[30rem] md:h-[35rem] md:w-[35rem] max-h-[35rem] max-w-[35rem]  cursor-pointer z-10"
           onMouseDown={handleMouseDown}
           onTouchStart={handleMouseDown}
         />
-        <Nav/>
+        <Nav />
       </header>
     </div>
   );
