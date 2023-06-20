@@ -68,7 +68,7 @@ function App() {
     }, 250);
     return () => clearTimeout(timer);
     //If the value of mouseDown changes then this effect will be called
-  }, [mouseDown]);
+  }, [mouseDown, onHoldInput]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -122,7 +122,7 @@ function App() {
           ASK YOUR QUESTION
         </div>
       </div>
-      <header className="App-header h-screen w-screen">
+      <div className="App-header h-screen w-screen n">
         <div
           className="FadeInOut opacity-0 absolute text-center top-20 sm:top-16 md:top-10 text-2xl md:text-4xl lg:text-[55px] font-bold 
       bg-clip-text bg-gradient-to-b from-sky-400 to-blue-700 text-transparent h-24 w-screen"
@@ -144,7 +144,7 @@ function App() {
           onTouchStart={handleMouseDown}
         />
         <Nav />
-      </header>
+      </div>
     </div>
   );
 }
